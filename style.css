@@ -1,0 +1,117 @@
+body{
+    background-color: #F7F9F7;
+    color: #24342F;
+    margin: 0;
+    direction: rtl;
+    font-family: 'cairo',sans-serif;
+    
+}
+
+/* ------------------------------------------header style---------------------------------------------- */
+header{
+    background-color: #063f33;
+    padding: 20px 20px; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* max-width: 1140px; */
+    }
+
+.logo{
+    width: 150px;
+    height: auto;
+}
+
+nav a{
+    color: white;
+    margin-bottom: 20px;
+    padding: 7px;
+}
+
+nav a:hover{
+    color: #BF984C;
+}
+
+
+
+
+/* ------------------------------------------main style---------------------------------------------- */
+
+main{
+    /* max-width: 1140px; */
+    margin:0 auto;
+    padding: 30px 20px;
+}
+
+
+
+
+h1,h2{
+    color: #075342;
+}
+
+
+section{
+    background-color: white;
+    border: 1px, solid #E8F2EE;
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+
+button{
+    background-color: #075342;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 25px;
+    font-family: 'cairo', sans-serif;
+    cursor: pointer;
+}
+
+.button:hover{
+    color: #BF984C;
+   
+}
+
+
+.contact-W-E{
+    display: flex;
+    justify-content: right;
+    gap: 20px;
+}
+
+
+
+
+
+/* ----------------------------------------footer style----------------------------------------------- */
+
+footer{
+    background-color:#063f33 ;
+    color: white;
+    margin: 0 auto;
+    text-align: center;
+  
+    
+}
+.aya{
+    color: white;
+    font-size: 40px;
+    
+    
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
