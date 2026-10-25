@@ -1,0 +1,260 @@
+
+
+* {
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    background: #F7F9F7;
+    color: #24342F;
+    font-family: "Cairo", Tahoma, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.container{
+    width: min(90%, 1140px);
+    margin-inline: auto;
+}
+
+.site-header{
+    background: #063F33;
+    color: #FFFFFF;
+    border-bottom: 3px solid #BF984C;
+}
+
+.site-header .container{
+    min-height: 84px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding-block: 12px;
+}
+
+.brand{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    color: #FFFFFF;
+    font-size: 25px;
+    font-width: 800;
+}
+
+.brand .logo{
+    display: block;
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+.main-nav{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+}
+
+.main-nav .a{
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a:focus{
+    color: #E5C989;
+}
+
+.page-intro {
+    padding: 52px 0 48px;
+    color: #FFFFFF;
+    background: linear-gradient(135deg, #063F33, #075342);
+    text-align: right;
+}
+
+.subtitle{
+    margin: 0 0 8px;
+    color: #E5C989;
+    font-size: 14 px;
+    font-weight: 700;
+}
+
+.page-intro .h1{
+    margin: 0 0 12px;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+.page-intro p:last-child{
+    max-width: 760px;
+    margin: 0;
+    color: #F0F5F2;
+}
+/*---------------------------------------------*/
+
+.lectures-section{
+    padding-top: 42px;
+    padding-bottom: 48px;
+}
+
+.section-heading{
+    margin-bottom: 24px;
+}
+.section-heading h2{
+    margin: 0 0 6px;
+    color: #075342;
+    font-size: 27px;
+    font-weight: 800;
+}
+
+.section-heading p{
+    margin: 0;
+    color: #718078;
+}
+
+.lectures-grid{
+    min-width: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    align-items: start;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible;
+}
+
+.lecture-card {
+    background-color: #FFFFFF;
+    border: 1px solid #DCE6E0;
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 0;
+}
+
+.lecture-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(6, 63, 51, 0.11);
+}
+
+.leacture-content,
+.lecture-content {
+    height: auto;
+    padding: 0;
+}
+
+.category {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 4px 12px;
+    color: #075342;
+    background: #E8F2EE;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.lecture-card h3 {
+    margin: 0 0 10px;
+    color: #063F33;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.6;
+}
+
+.description {
+    margin: 0 0 18px;
+    color: #596960;
+    font-size: 14px;
+}
+
+.lecture-info {
+    margin: 0 0 18px;
+    padding: 14px 16px;
+    background: #F7F9F7;
+    border-radius: 10px;
+}
+
+.lecture-info p {
+    margin: 4px 0;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.lecture-info strong {
+    color: #075342;
+}
+
+.map-link:hover,
+.map-link:focus {
+    color: #8B6827;
+    border-bottom-color: #BF984C;
+}
+
+.info-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-top: 38px;
+    padding: 26px 30px;
+    color: #FFFFFF;
+    background: #075342;
+    border-radius: 16px;
+}
+
+.info-banner h2 {
+    margin: 0 0 5px;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.info-banner p {
+    margin: 0;
+    color: #E5F0EB;
+}
+
+.contact-button {
+    display: inline-block;
+    flex-shrink: 0;
+    padding: 10px 22px;
+    color: #063F33;
+    background: #FFFFFF;
+    border: 2px solid #FFFFFF;
+    border-radius: 9px;
+    font-weight: 800;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.contact-button:hover,
+.contact-button:focus {
+    color: #FFFFFF;
+    background: transparent;
+}
+
+/* Footer */
+.site-footer {
+    padding: 18px 0;
+    color: #E5F0EB;
+    background: #042F27;
+    text-align: center;
+    font-size: 13px;
+}
+
+.site-footer p {
+    margin: 0;
+}
