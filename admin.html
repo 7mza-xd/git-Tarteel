@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة تحكم ترتيل</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="brand">
+            <div class="logo"><img src="tarteel-logo.png" alt="شعار ترتيل" class="logo">
+            </div>
+            <div>
+                <h1>ترتيل</h1>
+                <p>لوحة تحكم الإدارة</p>
+            </div>
+        </div>
+        <a href="index.html" class="site-link">العودة إلى الموقع ↗</a>
+    </header>
+
+      <div class="layout">
+    <aside class="sidebar">
+      <h2>القائمة الرئيسية</h2>
+      <a class="nav-link active" href="#overview">نظرة عامة</a>
+      <a class="nav-link" href="#lectures">مراجعة المحاضرات</a>
+      <a class="nav-link" href="#registrations">المسجلون في البرامج</a>
+      <a class="nav-link" href="#programs">إدارة البرامج</a>
+      <a class="nav-link" href="#messages">رسائل التواصل</a>
+    
+    </aside>
+
+    <main class="main-content">
+      <section class="welcome" id="overview">
+        <div>
+          <h2>مرحبًا بك في لوحة تحكم ترتيل</h2>
+          <p>تابع المحاضرات المضافة، واطّلع على تسجيلات البرامج ورسائل الزوار.</p>
+        </div>
+        <div class="admin-profile">
+          <div class="avatar">م</div>
+          <div><strong>مدير المنصة</strong><span>مسؤول النظام</span></div>
+        </div>
+      </section>
+
+      <section class="stats">
+        <div class="stat-card">
+          <span class="stat-icon">◷</span>
+          <div><p>محاضرات بانتظار الموافقة</p><strong>3</strong></div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">✓</span>
+          <div><p>محاضرات منشورة</p><strong>12</strong></div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">♙</span>
+          <div><p>المسجلون في البرامج</p><strong>124</strong></div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">▤</span>
+          <div><p>البرامج المتاحة</p><strong>6</strong></div>
+        </div>
+      </section>
+
+      <section class="panel" id="lectures">
+        <div class="section-heading">
+          <div>
+            <h2>مراجعة المحاضرات</h2>
+            <p>راجع بيانات المحاضرة قبل اتخاذ قرار النشر.</p>
+          </div>
+          <span class="count-badge">3 محاضرات جديدة</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>عنوان المحاضرة</th>
+                <th>المحاضر</th>
+                <th>الموقع</th>
+                <th>تاريخ الإضافة</th>
+                <th>الحالة</th>
+                <th>الإجراءات</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>شرح كتاب رياض الصالحين</strong></td>
+                <td>الشيخ أحمد السالمي</td>
+                <td>مسقط</td>
+                <td>20/10/2026</td>
+                <td><span class="status pending">بانتظار الموافقة</span></td>
+                <td><div class="actions"><a class="button approve" href="#lectures">موافقة</a><a class="button reject" href="#lectures">رفض</a></div></td>
+              </tr>
+              <tr>
+                <td><strong>أحكام تلاوة القرآن الكريم</strong></td>
+                <td>الشيخ خالد الهنائي</td>
+                <td>السيب</td>
+                <td>19/10/2026</td>
+                <td><span class="status pending">بانتظار الموافقة</span></td>
+                <td><div class="actions"><a class="button approve" href="#lectures">موافقة</a><a class="button reject" href="#lectures">رفض</a></div></td>
+              </tr>
+              <tr>
+                <td><strong>تدبر سورة الكهف</strong></td>
+                <td>الشيخ محمد الرواحي</td>
+                <td>نزوى</td>
+                <td>18/10/2026</td>
+                <td><span class="status pending">بانتظار الموافقة</span></td>
+                <td><div class="actions"><a class="button approve" href="#lectures">موافقة</a><a class="button reject" href="#lectures">رفض</a></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel" id="registrations">
+        <div class="section-heading">
+          <div>
+            <h2>المسجلون في البرامج</h2>
+            <p>عرض بيانات التسجيل والبرنامج الذي اختاره كل شخص.</p>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>اسم المسجل</th><th>البريد الإلكتروني</th><th>رقم الهاتف</th><th>البرنامج</th><th>تاريخ التسجيل</th><th>الحالة</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>سالم محمد</strong></td>
+                <td>salim@example.com</td>
+                <td>90000001</td>
+                <td>أحكام التلاوة</td><td>20/10/2026</td>
+                <td><span class="status approved">مكتمل</span></td>
+            </tr>
+              <tr>
+                <td><strong>مريم علي</strong></td>
+                <td>maryam@example.com</td>
+                <td>90000002</td>
+                <td>مجالس العلم</td>
+                <td>19/10/2026</td>
+                <td><span class="status approved">مكتمل</span></td>
+            </tr>
+              <tr>
+                <td><strong>خالد سعيد</strong></td>
+                <td>khalid@example.com</td>
+                <td>90000003</td>
+                <td>أحكام التلاوة</td>
+                <td>18/10/2026</td>
+                <td><span class="status waiting">قيد المراجعة</span></td>
+            </tr>
+              <tr>
+                <td><strong>عائشة أحمد</strong></td>
+                <td>aisha@example.com</td>
+                <td>90000004</td>
+                <td>تدبر القرآن</td>
+                <td>17/10/2026</td>
+                <td><span class="status approved">مكتمل</span></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel" id="programs">
+        <div class="section-heading">
+          <div>
+            <h2>البرامج المتاحة</h2>
+            <p>ملخص بالبرامج المعروضة في المنصة.</p>
+          </div>
+        </div>
+        <div class="program-grid">
+          <article class="program-card">
+            <span class="program-number">01</span>
+            <h3>أحكام التلاوة</h3>
+            <p>برنامج للتعرف على أحكام تلاوة القرآن الكريم.</p>
+            <span class="program-meta">عدد المسجلين: 48</span>
+        </article>
+          <article class="program-card">
+            <span class="program-number">02</span>
+            <h3>مجالس العلم</h3>
+            <p>لقاءات ومحاضرات في موضوعات علمية متنوعة.</p>
+            <span class="program-meta">عدد المسجلين: 39</span>
+        </article>
+          <article class="program-card">
+            <span class="program-number">03</span>
+            <h3>تدبر القرآن</h3>
+            <p>لقاءات للتأمل في معاني الآيات وتدبرها.</p>
+            <span class="program-meta">عدد المسجلين: 37</span>
+        </article>
+        </div>
+      </section>
+
+      <section class="panel" id="messages">
+        <div class="section-heading">
+          <div>
+            <h2>رسائل التواصل</h2>
+            <p>نماذج توضيحية للرسائل التي يمكن أن تصل من صفحة التواصل.</p>
+          </div>
+        </div>
+        <div class="message-list">
+          <article class="message">
+            <div class="message-top">
+                <strong>عبدالله سالم</strong>
+                <span class="status waiting">جديدة</span>
+            </div>
+            <p class="message-email">abdullah@example.com</p>
+            <h3>استفسار عن البرامج</h3>
+            <p>ما طريقة التسجيل في البرامج القادمة؟</p>
+          </article>
+          <article class="message">
+            <div class="message-top">
+                <strong>فاطمة علي</strong>
+                <span class="status waiting">جديدة</span>
+            </div>
+            <p class="message-email">fatima@example.com</p>
+            <h3>اقتراح للمنصة</h3>
+            <p>أقترح إضافة خاصية البحث حسب اسم المحاضر.</p>
+          </article>
+        </div>
+      </section>
+
+      <footer class="footer">ترتيل © 2026 — لوحة تحكم الإدارة</footer>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,551 @@
+:root {
+    --primary: #075342;
+    --accent: #D47233;
+    --soft: #F3D9CC;
+    --dark: #184443;
+    --bg: #F8F5EF;
+    --ease: cubic-bezier(.2, .7, .2, 1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* Everything is in rem, so the whole page scales with the screen width */
+html {
+    scroll-behavior: smooth;
+    font-size: clamp(14px, 1.05vw, 26px);
+}
+
+body {
+    font-family: "Tajawal", sans-serif;
+    background: var(--bg);
+    color: var(--dark);
+    line-height: 1.9;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.25;
+}
+
+/* ---------- Intro 0 → 100 ---------- */
+@property --n {
+    syntax: "<integer>";
+    inherits: false;
+    initial-value: 0;
+}
+
+.intro {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: grid;
+    place-items: center;
+    background: var(--primary);
+    color: var(--bg);
+    pointer-events: none;
+    animation: slide-up .7s 1s cubic-bezier(.7, 0, .2, 1) forwards;
+}
+
+.intro span {
+    font-size: 5rem;
+    font-weight: 800;
+    counter-reset: n var(--n);
+    animation: count 1s linear forwards;
+}
+
+.intro span::after {
+    content: counter(n);
+}
+
+@keyframes count {
+    to {
+        --n: 100;
+    }
+}
+
+@keyframes slide-up {
+    to {
+        transform: translateY(-100%);
+        visibility: hidden;
+    }
+}
+
+/* ---------- Every text block moves up when the page opens ---------- */
+.up {
+    animation: up .9s var(--ease) backwards;
+    animation-delay: calc(1.3s + var(--i, 0) * .1s);
+}
+
+@keyframes up {
+    from {
+        opacity: 0;
+        translate: 0 2.5rem;
+    }
+}
+
+.line {
+    display: block;
+    overflow: hidden;
+    padding-block: .08em;
+}
+
+.line>span {
+    display: block;
+    transform: translateY(115%);
+    animation: line-up .9s var(--ease) forwards;
+    animation-delay: calc(1.3s + var(--i) * .1s);
+}
+
+@keyframes line-up {
+    to {
+        transform: none;
+    }
+}
+
+/* ---------- Top bar ---------- */
+.topbar {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 1.4rem 5vw;
+}
+
+.logo {
+    justify-self: start;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--dark);
+    text-decoration: none;
+}
+
+.logo i {
+    width: .6rem;
+    height: .6rem;
+    background: var(--accent);
+    transform: rotate(45deg);
+}
+
+.topbar .btn {
+    justify-self: end;
+}
+
+/* ---------- Pill nav ---------- */
+nav {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    width: min(38rem, 90vw);
+    padding: .3rem;
+    background: var(--primary);
+    border: 1px solid var(--dark);
+    border-radius: 2rem;
+}
+
+nav a {
+    flex: 1;
+    padding: .5rem 0;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--soft);
+    line-height: 1.6;
+    transition: color .3s ease;
+}
+
+nav a:hover {
+    color: var(--dark);
+    anchor-name: --pill;
+}
+
+nav::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    position-anchor: --pill;
+    inset: anchor(top) anchor(right) anchor(bottom) anchor(left);
+    background: var(--bg);
+    border: 1px solid var(--accent);
+    border-radius: 2rem;
+    opacity: 0;
+    transition: inset .4s, opacity .3s;
+}
+
+nav:has(a:hover)::before {
+    opacity: 1;
+}
+
+@supports not (anchor-name: --x) {
+    nav a:hover {
+        background: var(--bg);
+        border-radius: 2rem;
+    }
+}
+
+/* ---------- Interactive buttons ---------- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .8rem;
+    padding: .7rem 1.8rem;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100% 0;
+    /* fill sweeps up on hover */
+    transition: background-size .5s var(--ease), color .4s, transform .4s var(--ease), box-shadow .4s;
+}
+
+.btn:hover {
+    background-size: 100% 100%;
+    transform: translateY(-.25rem);
+}
+
+.btn:active {
+    transform: translateY(0) scale(.96);
+}
+
+.btn:focus-visible,
+.link:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 4px;
+}
+
+.btn-outline {
+    border: 1px solid var(--dark);
+    color: var(--dark);
+    background-image: linear-gradient(var(--dark), var(--dark));
+}
+
+.btn-outline:hover {
+    color: var(--bg);
+}
+
+.btn-primary {
+    padding: .9rem 1.4rem .9rem 1.4rem;
+    background-color: var(--primary);
+    color: var(--bg);
+    background-image: linear-gradient(var(--accent), var(--accent));
+    box-shadow: 0 .6rem 1.4rem rgba(7, 83, 66, 0);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 .8rem 1.6rem rgba(7, 83, 66, .3);
+}
+
+.arrow {
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg);
+    font-size: 1.1rem;
+    line-height: 1;
+    transition: transform .4s var(--ease), background .4s, color .4s;
+}
+
+.btn-primary:hover .arrow {
+    transform: translateX(-.4rem) rotate(-360deg);
+    background: var(--bg);
+    color: var(--accent);
+}
+
+.link {
+    color: var(--dark);
+    font-weight: 500;
+    font-size: 1.1rem;
+    text-decoration: none;
+    background: linear-gradient(var(--accent), var(--accent)) no-repeat right bottom / 100% 2px;
+    padding-bottom: .15rem;
+    transition: background-size .4s var(--ease), color .3s;
+}
+
+.link:hover {
+    background-size: 100% 100%;
+    color: var(--bg);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    align-items: center;
+    gap: 3vw;
+    padding: 1rem 5vw 5rem;
+    min-height: calc(100svh - 6rem);
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: .6rem;
+    font-size: 1.05rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.eyebrow i {
+    width: .5rem;
+    height: .5rem;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+h1 {
+    font-size: clamp(2.8rem, 6.2vw, 10rem);
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.lead {
+    max-width: 38rem;
+    margin-top: 1.4rem;
+    font-size: 1.3rem;
+    opacity: .85;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* ---------- Arch illustration ---------- */
+.art {
+    position: relative;
+    width: min(34vw, 58vh);
+    aspect-ratio: 4 / 5;
+    justify-self: center;
+}
+
+.arch-back,
+.arch {
+    position: absolute;
+    border-radius: 999px 999px 0 0;
+}
+
+.arch-back {
+    inset: 0;
+    background: var(--soft);
+}
+
+.arch {
+    inset: 12% 14% 0;
+    background: var(--dark);
+    overflow: hidden;
+}
+
+.sun {
+    position: absolute;
+    top: 16%;
+    left: 50%;
+    width: 46%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+}
+
+.book {
+    position: absolute;
+    bottom: 12%;
+    left: 50%;
+    width: 60%;
+    height: 18%;
+    transform: translateX(-50%);
+}
+
+.book::before,
+.book::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 50%;
+    height: 100%;
+    background: var(--bg);
+}
+
+.book::before {
+    right: 50%;
+    border-radius: 0 12px 4px 0;
+    transform: skewY(6deg);
+    transform-origin: right bottom;
+}
+
+.book::after {
+    left: 50%;
+    border-radius: 12px 0 0 4px;
+    transform: skewY(-6deg);
+    transform-origin: left bottom;
+}
+
+.dot {
+    position: absolute;
+    bottom: 4%;
+    right: -4%;
+    width: 9%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: .85;
+}
+
+.art small {
+    position: absolute;
+    bottom: -2%;
+    left: 0;
+    font-size: .85rem;
+    letter-spacing: .1em;
+    color: var(--primary);
+}
+
+/* ---------- Cards: green fills from bottom to top on hover ---------- */
+.features {
+    padding: 0 5vw 6rem;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem;
+}
+
+.card {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 2.2rem;
+    min-height: 14rem;
+    background: #fff;
+    border: 1px solid var(--soft);
+    border-radius: 1.6rem;
+    transition: transform .6s var(--ease), box-shadow .6s var(--ease), border-color .6s;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--primary);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform .6s var(--ease);
+}
+
+.card:hover {
+    transform: translateY(-.8rem);
+    box-shadow: 0 1.6rem 3rem rgba(7, 83, 66, .25);
+    border-color: var(--primary);
+}
+
+.card:hover::before {
+    transform: scaleY(1);
+}
+
+.num {
+    color: var(--accent);
+    font-weight: 800;
+    font-size: 1rem;
+    transition: color .5s;
+}
+
+.card h3 {
+    margin: .4rem 0 .6rem;
+    font-size: 1.9rem;
+    color: var(--primary);
+    transition: color .5s;
+}
+
+.card p {
+    font-size: 1.15rem;
+    transition: color .5s;
+}
+
+.card:hover h3 {
+    color: var(--bg);
+}
+
+.card:hover p {
+    color: var(--soft);
+}
+
+.card:hover .num {
+    color: var(--accent);
+}
+
+/* scroll reveal for the cards */
+@supports (animation-timeline: view()) {
+    .card {
+        animation: rise linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 70%;
+    }
+
+    @keyframes rise {
+        from {
+            opacity: 0;
+            translate: 0 3rem;
+        }
+
+        to {
+            opacity: 1;
+            translate: 0 0;
+        }
+    }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+    html {
+        font-size: clamp(15px, 3.4vw, 22px);
+    }
+
+    .topbar {
+        grid-template-columns: 1fr auto;
+        row-gap: .8rem;
+    }
+
+    nav {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        width: 100%;
+    }
+
+    nav a {
+        font-size: .85rem;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding-bottom: 3rem;
+    }
+
+    h1 {
+        font-size: clamp(3rem, 14vw, 6rem);
+    }
+
+    .art {
+        width: min(75vw, 26rem);
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}

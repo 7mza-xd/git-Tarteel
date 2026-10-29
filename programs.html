@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>البرامج | ترتيل</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="indexxx.css">
+    <link rel="stylesheet" href="programs.css">
+</head>
+
+<body>
+    <div class="intro" aria-hidden="true"><span></span></div>
+
+    <header class="topbar">
+        <a href="#" class="logo up" style="--i:0">ترتيل <i></i></a>
+
+        <nav class="up" style="--i:1">
+            <a href="indexxx.html">الرئيسية</a>
+            <a href="programs.html">البرامج</a>
+            <a href="lectures.html">المحاضرات</a>
+            <a href="about-us.html">عن المنصة</a>
+            <a href="contact-us.html">تواصل معنا</a>
+        </nav>
+
+        <a href="indexxx.html" class="btn btn-outline up" style="--i:2">الرئيسية</a>
+    </header>
+
+    <main>
+        <section class="page-head">
+            <p class="eyebrow up" style="--i:3"><i></i> التسجيل في المراكز الصيفية</p>
+            <h1>
+                <span class="line"><span style="--i:4">المراكز الصيفية</span></span>
+                <span class="line"><span style="--i:5">لتحفيظ القرآن الكريم</span></span>
+            </h1>
+            <p class="lead up" style="--i:6">اختر المركز المناسب، وأدخل بياناتك، وارفع شهادة العام الماضي، ثم اضغط
+                إرسال.</p>
+            <ol class="steps up" style="--i:7">
+                <li><b>1</b> اختر المركز</li>
+                <li><b>2</b> عبّئ بياناتك</li>
+                <li><b>3</b> ارفع الشهادة وأرسل</li>
+            </ol>
+        </section>
+
+        <section class="grid">
+            <input type="radio" name="pick" id="p0" hidden>
+
+            <!-- 1 -->
+            <article class="prog">
+                <div class="stage">
+                    <div class="body">
+                        <span class="num">01</span>
+                        <h3>مركز الإمام جابر بن زيد <small>Alimam Jaber Center</small></h3>
+                        <span class="badge">تأسس عام 1432هـ / 2011م</span>
+                        <ul class="facts">
+                            <li>هدفنا خدمة المجتمع بتعليم القرآن الكريم والعلوم الشرعية والعربية</li>
+                            <li>وتنمية قدرات الأبناء بالأنشطة والمسابقات المتنوعة</li>
+                        </ul>
+                        <div class="cta"><input type="radio" name="pick" class="pick"
+                                aria-label="التسجيل في مركز الإمام جابر بن زيد"></div>
+
+                        <div class="panel">
+                            <div class="inner">
+                                <form class="form" onsubmit="return false">
+                                    <div class="form-head">
+                                        <h4>التسجيل في هذا المركز</h4><label for="p0" class="close">✕ رجوع</label>
+                                    </div>
+                                    <label class="f" style="--i:1"><span class="l">الاسم الكامل</span><input
+                                            class="field" type="text" required minlength="3" placeholder=" "
+                                            autocomplete="name"><i class="tick">✓</i></label>
+                                    <div class="row">
+                                        <label class="f" style="--i:2"><span class="l">رقم الهاتف</span><input
+                                                class="field" type="tel" required pattern="[0-9+ ]{8,15}"
+                                                placeholder=" " inputmode="tel" dir="ltr" style="text-align:right"><i
+                                                class="tick">✓</i></label>
+                                        <label class="f" style="--i:3"><span class="l">المدرسة</span><input
+                                                class="field" type="text" required minlength="2" placeholder=" "><i
+                                                class="tick">✓</i></label>
+                                    </div>
+                                    <label class="f" style="--i:4"><span class="l">شهادة العام الماضي (صورة أو
+                                            PDF)</span><input class="field" type="file" required
+                                            accept="image/*,.pdf"><i class="tick">✓</i></label>
+                                    <div class="send-row" style="--i:5">
+                                        <div class="send-off">أكمل جميع الحقول للإرسال</div>
+                                        <input type="checkbox" class="send sent" id="s1" aria-label="إرسال الطلب">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="done" aria-live="polite">
+                        <div class="check"><i></i></div>
+                        <h4>تم استلام طلبك</h4>
+                        <p>طلبك في مركز الإمام جابر بن زيد في انتظار الموافقة</p>
+                        <span class="status"><b></b> قيد المراجعة</span>
+                        <label for="s1" class="undo">تعديل الطلب</label>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 2 -->
+            <article class="prog">
+                <div class="stage">
+                    <div class="body">
+                        <span class="num">02</span>
+                        <h3>مركز رياض العلم</h3>
+                        <span class="badge">منذ ١٤٢٥ هـ / ٢٠٠٥ م</span>
+                        <ul class="facts">
+                            <li>مركز لتعليم القرآن الكريم وعلومه</li>
+                            <li>للتواصل: <a class="contact" href="tel:+96897220414"><bdi dir="ltr">97220414</bdi></a>
+                            </li>
+                        </ul>
+                        <div class="cta"><input type="radio" name="pick" class="pick"
+                                aria-label="التسجيل في مركز رياض العلم"></div>
+
+                        <div class="panel">
+                            <div class="inner">
+                                <form class="form" onsubmit="return false">
+                                    <div class="form-head">
+                                        <h4>التسجيل في هذا المركز</h4><label for="p0" class="close">✕ رجوع</label>
+                                    </div>
+                                    <label class="f" style="--i:1"><span class="l">الاسم الكامل</span><input
+                                            class="field" type="text" required minlength="3" placeholder=" "
+                                            autocomplete="name"><i class="tick">✓</i></label>
+                                    <div class="row">
+                                        <label class="f" style="--i:2"><span class="l">رقم الهاتف</span><input
+                                                class="field" type="tel" required pattern="[0-9+ ]{8,15}"
+                                                placeholder=" " inputmode="tel" dir="ltr" style="text-align:right"><i
+                                                class="tick">✓</i></label>
+                                        <label class="f" style="--i:3"><span class="l">المدرسة</span><input
+                                                class="field" type="text" required minlength="2" placeholder=" "><i
+                                                class="tick">✓</i></label>
+                                    </div>
+                                    <label class="f" style="--i:4"><span class="l">شهادة العام الماضي (صورة أو
+                                            PDF)</span><input class="field" type="file" required
+                                            accept="image/*,.pdf"><i class="tick">✓</i></label>
+                                    <div class="send-row" style="--i:5">
+                                        <div class="send-off">أكمل جميع الحقول للإرسال</div>
+                                        <input type="checkbox" class="send sent" id="s2" aria-label="إرسال الطلب">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="done" aria-live="polite">
+                        <div class="check"><i></i></div>
+                        <h4>تم استلام طلبك</h4>
+                        <p>طلبك في مركز رياض العلم في انتظار الموافقة</p>
+                        <span class="status"><b></b> قيد المراجعة</span>
+                        <label for="s2" class="undo">تعديل الطلب</label>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 3 -->
+            <article class="prog">
+                <div class="stage">
+                    <div class="body">
+                        <span class="num">03</span>
+                        <h3>مركز الشيخ عبدالله اللزامي <small>رحمه الله</small></h3>
+                        <span class="badge">تأسس عام ١٤٢٣هـ</span>
+                        <ul class="facts">
+                            <li><span class="tag">#جيلٌ_متعلم_عقيدةٌ_ثابتة_أخلاقٌ_نبوية</span></li>
+                            <li>للتواصل والاستفسار: <a class="contact" href="https://wa.me/96876745352"><bdi
+                                        dir="ltr">96876745352</bdi></a></li>
+                        </ul>
+                        <div class="cta"><input type="radio" name="pick" class="pick"
+                                aria-label="التسجيل في مركز الشيخ عبدالله اللزامي"></div>
+
+                        <div class="panel">
+                            <div class="inner">
+                                <form class="form" onsubmit="return false">
+                                    <div class="form-head">
+                                        <h4>التسجيل في هذا المركز</h4><label for="p0" class="close">✕ رجوع</label>
+                                    </div>
+                                    <label class="f" style="--i:1"><span class="l">الاسم الكامل</span><input
+                                            class="field" type="text" required minlength="3" placeholder=" "
+                                            autocomplete="name"><i class="tick">✓</i></label>
+                                    <div class="row">
+                                        <label class="f" style="--i:2"><span class="l">رقم الهاتف</span><input
+                                                class="field" type="tel" required pattern="[0-9+ ]{8,15}"
+                                                placeholder=" " inputmode="tel" dir="ltr" style="text-align:right"><i
+                                                class="tick">✓</i></label>
+                                        <label class="f" style="--i:3"><span class="l">المدرسة</span><input
+                                                class="field" type="text" required minlength="2" placeholder=" "><i
+                                                class="tick">✓</i></label>
+                                    </div>
+                                    <label class="f" style="--i:4"><span class="l">شهادة العام الماضي (صورة أو
+                                            PDF)</span><input class="field" type="file" required
+                                            accept="image/*,.pdf"><i class="tick">✓</i></label>
+                                    <div class="send-row" style="--i:5">
+                                        <div class="send-off">أكمل جميع الحقول للإرسال</div>
+                                        <input type="checkbox" class="send sent" id="s3" aria-label="إرسال الطلب">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="done" aria-live="polite">
+                        <div class="check"><i></i></div>
+                        <h4>تم استلام طلبك</h4>
+                        <p>طلبك في مركز الشيخ عبدالله اللزامي في انتظار الموافقة</p>
+                        <span class="status"><b></b> قيد المراجعة</span>
+                        <label for="s3" class="undo">تعديل الطلب</label>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 4 -->
+            <article class="prog">
+                <div class="stage">
+                    <div class="body">
+                        <span class="num">04</span>
+                        <h3>مدرسة الشيخ حمود بن حميد الصوافي</h3>
+                        <span class="badge">منصّة توثيقية</span>
+                        <ul class="facts">
+                            <li>منصّةٌ تُعنى بتوثيق حياة الشيخ المربي حمود بن حميد الصوافي -حفظه الله- ومركزِه الميمون.
+                            </li>
+                        </ul>
+                        <div class="cta"><input type="radio" name="pick" class="pick"
+                                aria-label="التسجيل في مدرسة الشيخ حمود بن حميد الصوافي"></div>
+
+                        <div class="panel">
+                            <div class="inner">
+                                <form class="form" onsubmit="return false">
+                                    <div class="form-head">
+                                        <h4>التسجيل في هذا المركز</h4><label for="p0" class="close">✕ رجوع</label>
+                                    </div>
+                                    <label class="f" style="--i:1"><span class="l">الاسم الكامل</span><input
+                                            class="field" type="text" required minlength="3" placeholder=" "
+                                            autocomplete="name"><i class="tick">✓</i></label>
+                                    <div class="row">
+                                        <label class="f" style="--i:2"><span class="l">رقم الهاتف</span><input
+                                                class="field" type="tel" required pattern="[0-9+ ]{8,15}"
+                                                placeholder=" " inputmode="tel" dir="ltr" style="text-align:right"><i
+                                                class="tick">✓</i></label>
+                                        <label class="f" style="--i:3"><span class="l">المدرسة</span><input
+                                                class="field" type="text" required minlength="2" placeholder=" "><i
+                                                class="tick">✓</i></label>
+                                    </div>
+                                    <label class="f" style="--i:4"><span class="l">شهادة العام الماضي (صورة أو
+                                            PDF)</span><input class="field" type="file" required
+                                            accept="image/*,.pdf"><i class="tick">✓</i></label>
+                                    <div class="send-row" style="--i:5">
+                                        <div class="send-off">أكمل جميع الحقول للإرسال</div>
+                                        <input type="checkbox" class="send sent" id="s4" aria-label="إرسال الطلب">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="done" aria-live="polite">
+                        <div class="check"><i></i></div>
+                        <h4>تم استلام طلبك</h4>
+                        <p>طلبك في مدرسة الشيخ حمود بن حميد الصوافي في انتظار الموافقة</p>
+                        <span class="status"><b></b> قيد المراجعة</span>
+                        <label for="s4" class="undo">تعديل الطلب</label>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+</body>
+
+</html>
