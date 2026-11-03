@@ -1,0 +1,122 @@
+/* Shared by about-us.html and contact-us.html — loads after style.css (same palette, rem sizing, effects) */
+input, button, select, textarea { font: inherit; color: inherit; }
+nav a[aria-current="page"] { background: rgba(248, 245, 239, .16); border-radius: 2rem; }
+
+.page-head { padding: 1rem 5vw 2.5rem; }
+.page-head h1 { font-size: clamp(2.8rem, 6vw, 9rem); }
+.page-head .lead { margin-top: 1rem; }
+
+.block { padding: 0 5vw 3.5rem; }
+.block > h2 { display: flex; align-items: center; gap: .8rem; margin-bottom: 1.4rem; font-size: clamp(1.8rem, 2.6vw, 3.4rem); color: var(--primary); }
+.block > h2::before { content: ""; width: .7rem; height: .7rem; background: var(--accent); transform: rotate(45deg); }
+
+/* ---------- Tiles (same hover as the home cards: green fills bottom → top) ---------- */
+.tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.6rem; }
+.tile {
+    position: relative; isolation: isolate; overflow: hidden;
+    padding: 2.2rem; min-height: 11rem;
+    background: #fff; border: 1px solid var(--soft); border-radius: 1.6rem;
+    transition: transform .6s var(--ease), box-shadow .6s var(--ease), border-color .6s;
+}
+.tile::before {
+    content: ""; position: absolute; inset: 0; z-index: -1;
+    background: var(--primary); transform: scaleY(0); transform-origin: bottom;
+    transition: transform .6s var(--ease);
+}
+.tile:hover { transform: translateY(-.8rem); box-shadow: 0 1.6rem 3rem rgba(7, 83, 66, .25); border-color: var(--primary); }
+.tile:hover::before { transform: scaleY(1); }
+.tile h3 { margin-bottom: .5rem; font-size: 1.9rem; color: var(--primary); transition: color .5s; }
+.tile p { font-size: 1.2rem; transition: color .5s; }
+.tile:hover h3 { color: var(--bg); }
+.tile:hover p { color: var(--soft); }
+.tile.wide { grid-column: 1 / -1; min-height: 0; }
+
+.chip { display: inline-block; margin-bottom: .8rem; padding: .1rem 1rem; border-radius: 999px; background: var(--soft); color: var(--dark); font-size: .95rem; font-weight: 500; transition: background .5s, color .5s; }
+.tile:hover .chip { background: var(--accent); color: var(--bg); }
+.pills { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.2rem; }
+.pills span { padding: .3rem 1.2rem; border-radius: 999px; border: 1px solid var(--accent); font-weight: 500; transition: background .5s, color .5s; }
+.tile:hover .pills span { background: var(--bg); color: var(--primary); border-color: var(--bg); }
+
+@supports (animation-timeline: view()) {
+    .tile, .form-card, .side-card { animation: rise linear both; animation-timeline: view(); animation-range: entry 0% entry 70%; }
+    @keyframes rise { from { opacity: 0; translate: 0 3rem; } to { opacity: 1; translate: 0 0; } }
+}
+
+/* ---------- Contact ---------- */
+.contact-grid { display: grid; grid-template-columns: 1.5fr .8fr; gap: 1.6rem; align-items: start; padding: 0 5vw 3.5rem; }
+.form-card { padding: 2.2rem; background: #fff; border: 1px solid var(--soft); border-radius: 1.6rem; }
+.form { display: grid; gap: 1.2rem; }
+.f { display: grid; gap: .35rem; }
+.l { font-size: 1rem; font-weight: 500; }
+.field {
+    width: 100%; padding: .8rem 1rem;
+    background: var(--bg); border: 1px solid var(--soft); border-radius: 1rem;
+    font-size: 1.05rem;
+    transition: border-color .3s, box-shadow .3s, background .3s;
+}
+.field:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 .25rem rgba(212, 114, 51, .18); background: #fff; }
+.field:not(:placeholder-shown):valid, select.field:valid { border-color: var(--primary); }
+textarea.field { min-height: 9rem; resize: vertical; }
+select.field {
+    -webkit-appearance: none; appearance: none; cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%23075342' stroke-width='2'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: left 1rem center;
+}
+button.btn { border: 0; cursor: pointer; justify-self: start; }
+
+.side-card { padding: 2.2rem; background: var(--primary); color: var(--bg); border-radius: 1.6rem; }
+.side-card h2 { margin-bottom: 1.2rem; font-size: 1.7rem; }
+.chan {
+    display: flex; align-items: center; gap: 1rem;
+    padding: .8rem 1rem; margin-top: .8rem;
+    color: var(--bg); text-decoration: none; font-weight: 500;
+    background: rgba(248, 245, 239, .1); border-radius: 1.2rem;
+    transition: background .4s, transform .4s var(--ease);
+}
+.chan:hover { background: var(--accent); transform: translateX(.4rem); }
+.chan span { display: grid; place-items: center; flex: none; width: 3rem; height: 3rem; border-radius: 50%; background: var(--bg); }
+.chan img { width: 1.8rem; height: 1.8rem; object-fit: contain; }
+.chan small { display: block; font-size: .85rem; font-weight: 400; color: var(--soft); line-height: 1.5; }
+.chan:hover small { color: var(--bg); }
+.chan bdi, .chan em { font-style: normal; overflow-wrap: anywhere; }
+
+/* ---------- Footer ---------- */
+footer { margin-top: 2rem; padding: 3rem 5vw 2rem; text-align: center; background: var(--primary); color: var(--bg); border-radius: 2.5rem 2.5rem 0 0; }
+.aya { font-size: clamp(1.8rem, 3.2vw, 4rem); font-weight: 800; line-height: 1.8; color: var(--soft); }
+.aya::after { content: ""; display: block; width: .7rem; height: .7rem; margin: .8rem auto 0; background: var(--accent); transform: rotate(45deg); }
+footer p { margin-top: 1rem; font-size: .95rem; opacity: .75; }
+
+@media (max-width: 900px) {
+    .tiles { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    button.btn { justify-self: stretch; justify-content: center; }
+}
+
+/* ---------- Lectures page ---------- */
+.block > .sub { margin: -.8rem 0 1.6rem; font-size: 1.15rem; opacity: .8; }
+.tiles.three { grid-template-columns: repeat(3, 1fr); }
+.lec { display: flex; flex-direction: column; }
+.lec .num { position: absolute; top: 1.6rem; inset-inline-end: 2rem; font-size: 1rem; }
+.lec h3 { font-size: 1.6rem; }
+.lec .desc { margin-bottom: 1.2rem; font-size: 1.1rem; }
+.info { display: grid; grid-template-columns: auto 1fr; gap: .4rem 1rem; margin-bottom: 1.4rem; padding: 1rem 1.2rem; background: var(--bg); border-radius: 1rem; font-size: 1.05rem; transition: background .5s; }
+.info dt { font-weight: 700; color: var(--primary); transition: color .5s; }
+.info dd { margin: 0; transition: color .5s; }
+.lec:hover .info { background: rgba(248, 245, 239, .12); }
+.lec:hover .info dt { color: var(--accent); }
+.lec:hover .info dd { color: var(--bg); }
+.lec .link { margin-top: auto; align-self: flex-start; }
+.tile:hover .link { color: var(--bg); }
+
+.banner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.6rem; margin: 0 5vw 3.5rem; padding: 2.2rem 2.6rem; background: var(--primary); color: var(--bg); border-radius: 1.6rem; }
+.banner h2 { font-size: 1.9rem; }
+.banner p { font-size: 1.15rem; color: var(--soft); }
+.btn-light { background-color: var(--bg); color: var(--dark); background-image: linear-gradient(var(--accent), var(--accent)); }
+.btn-light:hover { color: var(--bg); }
+@supports (animation-timeline: view()) {
+    .banner { animation: rise linear both; animation-timeline: view(); animation-range: entry 0% entry 70%; }
+}
+@media (max-width: 900px) {
+    .tiles.three { grid-template-columns: 1fr; }
+    .banner .btn { width: 100%; justify-content: center; }
+}
